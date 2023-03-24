@@ -1,4 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:dw9_delivery_app/app/core/ui/helpers/size_extesions.dart';
+import 'package:dw9_delivery_app/app/core/ui/widgets/delivery_button.dart';
+import 'package:flutter/material.dart';  
+import '../../core/config/env/env.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -10,7 +13,13 @@ class SplashPage extends StatelessWidget {
       body: Column(
         children: [
           Container(),
-          ElevatedButton(onPressed: (){}, child: Text('teste')),
+          DeliveryButton(
+            width: 200,
+            height: 200,
+            label: Env.i['backend_base_url'] ?? '',
+            onPressed: (){},
+          ),
+          Text(context.screenWidth.toString()),
           TextFormField(
             decoration: InputDecoration(labelText: 'text'),
           )
